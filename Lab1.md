@@ -1,6 +1,3 @@
-Lab 1
-================
-
 ![Shaun Levick](Logo2.png) GEARS - Geospatial Ecology and Remote Sensing lab - <https://www.geospatialecology.com>
 
 Environmental Monitoring and Modelling
@@ -182,23 +179,12 @@ Assessment task
 
 Sentinel-2 is a relatively new platform, which will become increasingly important and prominent in ecosystem studies going forward. However for exploring historical trends in data, we need to turn to other platforms such as MODIS (since 2000) and Landsat (since the 1970s).
 
-Practical lab assignment 1 (30 marks)
--------------------------------------
+Try and reproduce the above example using both Landsat 8 and MODIS imagery. 
 
-1.  Search for a cloud free Sentinel-2 and Landsat 8 image from 2016 collected over Litchfield National Park (Litchfield is located south of Darwin, near the town of Batchelor, Northern Territory, Australia).
-2.  Calculate NDVI for each of the scenes and load them into the map view.
-3.  Inspect how NDVI varies spatially across each image, and explore the patterns in NDVI vary according to the sensor used.
-4.  Write up a lab report with answers to the following questions:
-    -   what drives differences in NDVI values across the Litchfield area?
-    -   do NDVI values for the same vegetation patches vary between sensors?
-    -   if so, why do these difference between sensors arise?
-    -   what are the implications of between-sensor differences for long-term monitoring of vegetation condition?
-5.  Include zoomed in maps (500 m scale bar) of the two NDVI images in your report to aid discussion.
-6.  Include a copy of your Javascript code at the end of the report.
-7.  Final lab reports are to be submitted as a single PDF document in Learnline.
-
-*NB: Remember that i) the band position of RED and NIR wavelengths might differ between different sensors, and ii) pixel size may differ between different sensors; and iii) time of year is an important consideration. For Landsat 8, the metadata property for cloud cover is 'CLOUD\_COVER'.*
+Remember that i) the band position of RED and NIR wavelengths might differ between different sensors, and ii) pixel size may differ between different sensors; and iii) time of year is an important consideration. Also, you will need to look up the metadata property for cloud cover.
 
 ------------------------------------------------------------------------
 
 GEARS - Geospatial Ecology and Remote Sensing lab - <https://www.geospatialecology.com>
+
+Guided video on YouTube - <https://youtu.be/2i6cw7nTbhI>
