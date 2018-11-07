@@ -127,7 +127,7 @@ var slope = ee.Terrain.slope(srtm);
 Map.addLayer(slope, {min: 0, max: 60}, 'slope');
 ```
 
-4. Layers added to the map will have default names like "Layer 1", "Layer 2", etc. To improve the readability, give each layer a human­readable name.
+4. Layers added to the map will have default names like "Layer 1", "Layer 2", etc. To improve the readability, give each layer a human readable name.
 
 ```JavaScript
 var slope = ee.Terrain.slope(srtm);
@@ -145,7 +145,7 @@ Things to try:
 
 ------
 
-##5. Apply a spatial reducer
+## 5. Apply a spatial reducer
 1. Select the polygon geometry tool and draw a triangle (or more complex polygon) on the map.
 2. Print the mean value for the region.
 
@@ -169,7 +169,7 @@ Things to try:
 
 -------
 
-##6. Load and filter an image collection
+## 6. Load and filter an image collection
 1. Delete the srtm object from the Import section, by rolling your cursor over the object, then clicking on the trash can icon.
 2. Search for “Landsat 8 toa” and add the result to the imports section. Rename the collection "L8".
 3. Apply a date filter to the image collection, using the filterDate() method.
@@ -182,7 +182,7 @@ Map.addLayer(filtered);
 
 -----
 
-##7. Play with image bands
+## 7. Play with image bands
 
 1. With the default visualization parameters, the data looks dark and the colors look wrong. Pick better visualization parameters.
 
@@ -215,7 +215,7 @@ Map.addLayer(filtered, rgb_vis, 'RGB');
 
 --------
 
-##8. Reducing image collections
+## 8. Reducing image collections
 
 1. Expand out the date range.
 
@@ -243,7 +243,7 @@ Map.addLayer(filtered.median(), rgb_vis, 'RGB - median reducer');
 
 ---------
 
-##9. Isolate an Image
+## 9. Isolate an Image
 
 1. Narrow the time range to a 7­-10 day window.
 
@@ -278,7 +278,7 @@ Extra things to do:
 
 ---------
 
-##10. Compute NDVI
+## 10. Compute NDVI
 1. Using the .select() method, pick out the NIR and red bands, and do some math the “hard” way by hand.
 ```javascript
 var rgb_vis = {min: 0, max: 0.3, bands: ['B4', 'B3', 'B2']};
@@ -306,7 +306,7 @@ Map.addLayer(ndvi, {min: 0, max: 1}, 'NDVI');
 
 ---------
 
-##11. Write a Function
+## 11. Write a Function
 Our next goal is to calculate NDVI for a collection of images. To do so, we first need to refactor (rewrite) our code to using a function, which can then be applied to all images in a collection.
 
 1. Start by writing a function that adds a band with NDVI data to an image:
@@ -344,7 +344,7 @@ Map.addLayer(ndvi, {bands: 'nd', min: 0, max: 1}, 'NDVI');
 
 ---------
 
-##12. Map a Function over a Collection
+## 12. Map a Function over a Collection
 1. Now that we have a function, we will 'map' the function across the filtered Landsat 8 collection.
 
 ```javascript
@@ -378,7 +378,7 @@ Map.addLayer(with_ndvi.median(), {bands: 'nd', min: 0, max: 1}, 'NDVI');
 
 --------
 
-##13. Build a Greenest­ Pixel Composite
+## 13. Build a Greenest­ Pixel Composite
 
 1. We will now work on an even better way to produce cloud­ free mosaics. The ee.ImageCollection.qualityMosaic() method can be used to order image bands, on a pixel­ by ­pixel basis, by a specified metric (we will use NDVI).
 
@@ -399,7 +399,7 @@ Map.addLayer(greenest, rgb_vis, 'RGB (greenest pixel)');
 
 --------
 
-##14. Chart NDVI over Time
+## 14. Chart NDVI over Time
 
 1. Click on the ROI point that was added earlier, and then drag it to an agricultural field. Add the following line to make a chart of NDVI over time for your ROI.
 
@@ -421,7 +421,7 @@ print(Chart.image.series(with_ndvi.select('nd'), roi));
 
 --------
 
-##15. Export an RGB Image
+## 15. Export an RGB Image
 
 The source data that you work with can have many different characteristics (single­band, multispectral, high ­bit ­depth, etc.), and the visualization tools in Earth Engine allow you to display the data in a variety of ways. You can also export the data in a variety of ways, such as a multi­band image. This section will demonstrate how to export a 3­band (RGB) 8­bit image that can be easily displayed in other tools outside of Earth Engine.
 
