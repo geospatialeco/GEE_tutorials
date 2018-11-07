@@ -1,4 +1,4 @@
-![Shaun Levick](Logo2.PNG)
+![Shaun Levick](Logo2.png)
 GEARS - Geospatial Ecology and Remote Sensing lab - https://www.geospatialecology.com
 
 # Environmental Monitoring and Modelling
@@ -13,7 +13,7 @@ Lab 2 - Getting deeper into Earth Engine
 
 ## 1. The Earth Engine code editor
 
-![Figure 1. The Google Earth Engine environment](gee_editor.PNG)
+![Figure 1. The Google Earth Engine environment](gee_editor.png)
 
 
 1. Editor Panel
@@ -108,8 +108,6 @@ The displayed map will look pretty flat grey, because the default visualization 
 Map.addLayer(srtm, {min: 0, max: 1000});
 ```
 
-[Script link](https://code.earthengine.google.com/346d11d7fdbfd462a32994deefbd1e85)
-
 ----------
 
 ## 4. Applying a computation to an image
@@ -137,8 +135,6 @@ Map.addLayer(srtm, {min: 0, max: 1000}, 'DEM');
 Map.addLayer(slope, {min: 0, max: 60}, 'slope');
 ```
 
-[Scipt Link](https://code.earthengine.google.com/cb0385ce64d5bf1669f012e689aa91ae)
-
 Things to try:
 
 - Search for a specific location
@@ -165,8 +161,6 @@ var dict = srtm.reduceRegion({
 
 3. Clear the workspace by clicking Reset ­> Clear script
 
-[Script Link](https://code.earthengine.google.com/a0dc428620e5bd73086eeb5fbbed7121)
-
 
 Things to try:
 - Discuss the return type of reduceRegion (Dictionary).
@@ -185,8 +179,6 @@ var filtered = L8.filterDate('2013-04-15', '2013-04-20');
 Map.addLayer(filtered);
 ```
 
-
-[Script Link](https://code.earthengine.google.com/f5677fa228ae2944a23d4277f5ed41dc)
 
 -----
 
@@ -221,8 +213,6 @@ Map.addLayer(filtered, rgb_vis, 'RGB');
 	- Select a Range Stretch method, and then apply it to the image.
 
 
-[Script Link](https://code.earthengine.google.com/f31a1607692568c097458426a4dbfe43)
-
 --------
 
 ##8. Reducing image collections
@@ -250,8 +240,6 @@ var filtered = L8.filterDate('2014-01-01', '2015-01-01');
 Map.addLayer(filtered, rgb_vis, 'RGB');
 Map.addLayer(filtered.median(), rgb_vis, 'RGB - median reducer');
 ```
-
-[Script Link](https://code.earthengine.google.com/ea9e8f946f9471855b01861c7fce52d2)
 
 ---------
 
@@ -284,8 +272,6 @@ var image = ee.Image(filtered.first());
 Map.addLayer(image, rgb_vis, 'RGB');
 ```
 
-[Script Link](https://code.earthengine.google.com/cc07cd2148b16dccd525705048a8a8bf)
-
 
 Extra things to do:
 - Sort the filtered collection by 'CLOUD_COVER'
@@ -317,8 +303,6 @@ var ndvi = image.normalizedDifference(['B5', 'B4']);
 Map.addLayer(image, rgb_vis, 'RGB');
 Map.addLayer(ndvi, {min: 0, max: 1}, 'NDVI');
 ```
-
-[Script Link](https://code.earthengine.google.com/b4f6cbe2362beca66a6dd906f92ec551)
 
 ---------
 
@@ -358,9 +342,6 @@ Map.addLayer(image, rgb_vis, 'RGB');
 Map.addLayer(ndvi, {bands: 'nd', min: 0, max: 1}, 'NDVI');
 ```
 
-[Script Link](https://code.earthengine.google.com/6a560cb635de3fe260b3772f2f02e7f4)
-
-
 ---------
 
 ##12. Map a Function over a Collection
@@ -395,9 +376,6 @@ Map.addLayer(filtered.median(), rgb_vis, 'RGB');
 Map.addLayer(with_ndvi.median(), {bands: 'nd', min: 0, max: 1}, 'NDVI');
 ```
 
-[Script Link](https://code.earthengine.google.com/58d5c94fb654846fcf9eac0295695a83)
-
-
 --------
 
 ##13. Build a Greenest­ Pixel Composite
@@ -418,9 +396,6 @@ Map.addLayer(greenest, rgb_vis, 'RGB (greenest pixel)');
 ```
 
 2. If your chosen location doesn’t make for a decent max­NDVI composite, you can fly somewhere interesting - like a rainforest belt. Try the Daintree area in the vicinity of Cairns, Australia.
-
-[Script Link](https://code.earthengine.google.com/30003261c641d6bf0fa9a917f7143ade)
-
 
 --------
 
@@ -443,8 +418,6 @@ print(Chart.image.series(with_ndvi.select('nd'), roi));
 ```
 
 2. Try out the interactivity of the chart by hovering, expand it to full screen, and testing out the SVG/PNG/CSV download buttons.
-
-[Script Link](https://code.earthengine.google.com/dce9f1f9a0b4f8ce309b8337d1ab6286)
 
 --------
 
@@ -484,8 +457,6 @@ Export.image(rgb, 'GreenestPixel');
 ```
 
 3. Look at the Docs tab for the Export object, and check out the other things that you can export. Tables! Videos!
-
-[Script Link](https://code.earthengine.google.com/f6e9d5f20ed15cdf191f8a2907fced59)
 
 
 -----------
